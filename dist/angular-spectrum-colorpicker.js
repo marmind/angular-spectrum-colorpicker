@@ -1,5 +1,5 @@
 /*!
- * angular-spectrum-colorpicker v1.4.5
+ * angular-spectrum-colorpicker v1.4.5.1
  * https://github.com/Jimdo/angular-spectrum-colorpicker
  *
  * Angular directive for a colorpicker, that bases on http://bgrins.github.io/spectrum/
@@ -152,6 +152,10 @@
           if(angular.isDefined(options.disabled)) {
             $scope.disabled = !!options.disabled;
           }
+          
+          attrs.$observe('disabled', function (newDisabled) {
+            $scope.disabled = newDisabled;
+          });
   
           $scope.$watch('disabled', function (newDisabled) {
             $input.spectrum(newDisabled ? 'disable' : 'enable');
