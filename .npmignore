@@ -1,11 +1,13 @@
 log
 bower_components
 node_modules
-.DS_Store
-npm-debug.log
 grunt
+demo
+tasks
+test
 .idea
 .tmp
 .project
 .settings
-dist
+.DS_Store
+npm-debug.log

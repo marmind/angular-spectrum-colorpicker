@@ -3,35 +3,29 @@
 <head>
   <meta charset="utf-8">
   <title>E2E Tests</title>
-  <link rel="stylesheet/less" type="text/css" href="/src/less/style.less" />
+  <!-- [[src/less]] -->
   <link rel="stylesheet" href="/bower_components/spectrum/spectrum.css" />
 </head>
-<body>
+<body ng-init="disabled = false">
   <!--       THIS IS NOT A SANDBOX, IT'S FOR E2E TESTING!      -->
   <!-- PLEASE USE demo/index.html IF YOU'D LIKE TO PLAY AROUND -->
 
   <input type="text" name="color" ng-model="color" id="color">
+  <label for="disabled">Disabled:</label><input type="checkbox" id="disabled" ng-model="disabled">
 
   <spectrum-colorpicker
-  ng-model="color"
-  format="'hex'"
-  options="{
-    flat: true,
-    showInput: true,
-    showAlpha: true
-  }">
+    ng-model="color"
+    format="'hex'"
+    disabled="disabled"
+    options="{
+      flat: false,
+      showInput: true,
+      showAlpha: true,
+      showPalette: true
+    }">
   </spectrum-colorpicker>
 
-  <script src="/bower_components/jquery/dist/jquery.js"></script>
-  <script>
-    /* jshint indent: false */
-    /* global files, $ */
-    $.get('/tasks/files.js', function() {
-      files.testEnv.push('test/e2e/env/app.js');
-      $.each(files.testEnv, function(i, url) {
-        $('body').append($('<script>').attr('src', '/' + url));
-      });
-    });
-  </script>
+  <!-- [[src/js]] -->
+  <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
