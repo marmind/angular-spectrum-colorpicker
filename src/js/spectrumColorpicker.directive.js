@@ -135,6 +135,10 @@
         if(angular.isDefined(options.disabled)) {
           $scope.disabled = !!options.disabled;
         }
+        
+        attrs.$observe('disabled', function (newDisabled) {
+          $scope.disabled = newDisabled;
+        });
 
         $scope.$watch('disabled', function (newDisabled) {
           $input.spectrum(newDisabled ? 'disable' : 'enable');
