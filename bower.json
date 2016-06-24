@@ -1,6 +1,6 @@
 {
   "name": "angular-spectrum-colorpicker",
-  "version": "1.4.5",
+  "version": "1.4.5.1",
   "authors": [
     "Jimdo GmbH",
     "Joscha Feth <joscha@feth.com>",
@@ -40,7 +40,7 @@
     "jasmine-moar-matchers": "~0.0.2"
   },
   "dependencies": {
-    "spectrum": "1.7.0",
+    "spectrum": "1.8.0",
     "angular": "^1.2.8"
   },
   "ignore": [
